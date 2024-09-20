@@ -1,12 +1,19 @@
 import json
+import os
 import telebot
 import requests
+from dotenv import load_dotenv
 from telebot import types
 from requests.exceptions import ReadTimeout
 from bs4 import BeautifulSoup as bs
 
-API_TG = '6260414336:AAH03buhY_s6eqCtta-XW5GH7oPf_rE1Q6w'
-API_FORECAST = '92c41879d92ebe7cbadf7a36dfcff3c7'
+load_dotenv()
+
+API_TG = os.getenv('API_TELEGRAM')
+API_FORECAST = os.getenv('API_FOR')
+
+if not API_TG or not API_FORECAST:
+    raise ValueError("API keys are missing. Please check your .env file.")
 
 bot = telebot.TeleBot(API_TG)
 
