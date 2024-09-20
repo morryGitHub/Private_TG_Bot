@@ -248,7 +248,7 @@ def fetch_weather(city_name):
             # Format response with emoji
             response = (f'<b>🌤️ Current Weather in {city_name.capitalize()}:</b>\n\n'
                         f'<b>Temperature:</b> {temperature}°C 🌡️\n'
-                        f'<b>Weather conditions:</b> {weather_description.capitalize()} {weather_emoji}\n'
+                        f'<b>Weather cond.:</b> {weather_description.capitalize()} {weather_emoji}\n'
                         f'<b>Wind speed:</b> {wind_mps} m/sec 💨')
 
             return response
